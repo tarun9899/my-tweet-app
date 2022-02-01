@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <nav class="nav flex-column" style="position: fixed;width: 20%;">
+                    <a routerLink="" class="nav-link mr-l f-sz"> <img class="pic-hov wd-20 m-r-10"
+                            src="./assets/img/icons8-twitter-48.png" alt="tweet"></a>
+                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                            src="./assets/img/home.png" alt="home">Home</a>
+                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                            src="./assets/img/profile-avatar.png" alt="profile"> Profile</a>
+                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                            src="./assets/img/analysis.png" alt="statistics"> Statistics</a>
+                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                            src="./assets/img/contact-mail.png" alt="report"> Report</a>
+                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                            src="./assets/img/more-than.png" alt="more"> More</a>
+                <div class="col-md-3 mr-l" >
+                    <button class="btn btn-primary" style="padding: 8px;
+                    margin-top: 60px;
+                    border-radius: 46px;
+                    width: 190px;"> tweet</button>
+                </div>
+
+            </nav>
+        </div>
+        <div class="col-md-6 tweet-card border">
+            <div class="row">
+                <div class="col-md-12 f-p">
+                    Home
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea class="input-field" type="text" name="tweet" placeholder="What's Happening ?"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-10">
+                    <button class="btn btn-primary f-r" (click)="onTweet()">tweet</button>
+                </div>
+            </div>
+            <div class="row border" *ngFor="let obj of tweetList">
+                <div class="row">
+                    <div class=" p-20">
+                        <a class="f-sz" routerLink="">{{obj.name}}
+                            <img class="wd-5" src="./assets/img/success-blue.png" alt="name">
+                        </a>
+                    </div>
+                    <div class="p-20">{{obj.tweet}}</div>
+                </div>
+                <div class="row p-20">
+                    <div class="col-md-3">
+                        <a routerLink="">
+                            <img class="wd-15" src="./assets/img/comment.png" alt="comment">
+                        </a>
+                        <span class="p-7">12</span>
+                    </div>
+                    <div class="col-md-3">
+                        <a routerLink="">
+                            <img class="wd-15" src="./assets/img/retweet.png" alt="retweet"></a>
+                        <span class="p-7">
+                            24
+                        </span>
+                    </div>
+                    <div class="col-md-3">
+                        <a routerLink="">
+                            <img class="wd-15" src="./assets/img/heart-light.png" alt="like"></a>
+                        <span class="p-7"> 100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12 f-sz">
+                    <img class="wd-15 m-r-10"
+                    src="./assets/img/profile-avatar.png" alt="profile">Tarun Narra
+                </div>
+                <div class="col-md-12 p-12">
+                    <div class="input-group">
+                        <input class="form-control border-rad" type="search" name="search" placeholder="search">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="col-md-6 hov-1 p-12">
+                        <a class="f-sz" routerLink=""><img class="wd-15 m-r-10" src="./assets/img/address.png"
+                                alt="location">Location</a>
+                    </div>
+                    <div class="col-md-6 hov-1 p-12">
+                        <a class="f-sz" routerLink=""> <img class="wd-15 m-r-10" src="./assets/img/end-call.png"
+                                alt="contact">Contact US</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

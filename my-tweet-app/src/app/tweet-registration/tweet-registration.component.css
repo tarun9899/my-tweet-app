@@ -1,0 +1,16 @@
+.p-12{
+    padding: 12px;
+}
+
+.form-label{
+    font-weight: 700;
+}
+
+.button-css{
+width: 15%;
+border-radius: 25Px;
+}
+
+::ng-deep modal-content{
+    border-radius: 22px;
+}

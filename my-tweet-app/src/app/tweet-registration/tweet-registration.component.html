@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Registration Form</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalHide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+
+    <div class="col-md-8 p-12">
+        <label for="userName" class="form-label">First Name:</label>
+        <input class="form-control" name="username" type="text" id="userName">
+    </div>
+    <div class="col-md-8 p-12">
+        <label for="lastName" class="form-label">Last Name:</label>
+        <input class="form-control" name="lastname" type="text" id="lastName">
+    </div>
+    <div class="col-md-8 p-12">
+        <label for="age" class="form-label">Age:</label>
+        <select class="form-select">
+            <option>Select Age Group</option>
+            <option>1-10</option>
+            <option>10-20</option>
+            <option>20-30</option>
+            <option>30-40</option>
+            <option>40-50</option>
+            <option>More...</option>
+        </select>
+    </div>
+    <!-- <div class="col-md-8 p-12">
+        <input type="text" id="dateOfBirth" placeholder="Datepicker" name="dateOfBirth" bsDatepicker [bsConfig]="bsDatePickerConfig">
+    </div> -->
+
+    <div class="col-md-8 p-12">
+        <label for="pssword" class="form-label">Password:</label>
+        <input class="form-control" name="password" type="text" id="pssword">
+    </div>
+    <div class="col-md-8 p-12">
+        <label for="conpssword" class="form-label">Confirm password:</label>
+        <input class="form-control" name="conpasword" type="password" id="conpssword">
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="button-css btn btn-success" (click)="modalHide()">Submit</button>
+    <button type="button" class="button-css btn btn-danger" (click)="modalHide()">Reset</button>
+</div>

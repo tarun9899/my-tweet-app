@@ -1,0 +1,101 @@
+textarea:focus{
+    outline: none;
+    border: transparent;
+    overflow: hidden;
+}
+
+.tweet-card{
+    padding-left: 12px;
+    padding-top: 12px;
+    height: fit-content;
+}
+
+.input-field{
+    border: transparent;
+    padding: 12px;
+    width:100%;
+}
+
+.f-r{
+    float:right;
+}
+
+.p-10{
+    padding:10px;
+}
+.p-70{
+    padding: 70px;
+}
+
+.wd-15{
+    width: 15%;
+}
+.p-20{
+    padding:20px;
+}
+.wd-5{
+    width: 5%;
+}
+
+.mr-l{
+    margin-left: 100px;
+}
+
+.m-r-10{
+    margin-right: 10px;
+}
+
+.f-p{
+    padding: 12px;
+    font-weight: 900;
+}
+
+.f-sz
+{
+    color: black;
+    font-weight: 500;
+}
+
+.hov:hover{
+    border-radius: 20px;
+    padding:8px;
+    background-color:#efefef;
+}
+
+a{
+    text-decoration: none;
+}
+
+.border{
+    border: 1px solid #efefef !important; 
+}
+
+.border-rad{
+    border-radius: 15px;
+}
+
+.p-7{
+    padding: 7px;
+}
+
+.p-12{
+    padding:12px;
+}
+
+.f-500{
+    font-weight: 500;
+    font-size: medium;
+}
+
+.hov-1:hover{
+    background-color: #efefef;
+    border-radius: 20px;
+    padding:8px;
+}
+
+.pic-hov:hover{
+    border-radius: 14px;
+    background-color: lightskyblue;
+    padding: 3px;
+}
+
