@@ -27,8 +27,48 @@
     font-family: inherit;
 }
 
-.modal-size{
-    width: 150%;
+::ng-deep .my-modal .modal-content {
     border-radius: 22px;
     border: 1px solid black;
+}
+
+.img-css{
+    color: deepskyblue;
+    margin-left: 80px;
+    margin-right: 15px;
+}
+
+.mar-top{
+    margin-top: 5px;
+}
+
+.box-hov:hover{
+    box-shadow: -1px 0px 24px -6px;
+}
+
+.p-12{
+    padding: 12px;
+}
+
+.red-border{
+    border: 1px solid red !important;
+    margin-top: 10px;
+    width: 50%;
+    margin-left: 26%;
+}
+
+.green-border{
+    border: 1px solid green !important;
+    margin-top: 10px;
+    width: 50%;
+    margin-left: 26%;
+}
+.mar-rig-6
+{
+    margin-right: 6px;
+}
+
+a{
+    color: #0d6efd !important ;
+    text-decoration: underline !important;
 }

@@ -7,10 +7,19 @@
 }
 
 .button-css{
-width: 15%;
-border-radius: 25Px;
+    width: 48%;
+    border-radius: 25Px;
+    font-weight: 900;
 }
 
 ::ng-deep modal-content{
     border-radius: 22px;
+}
+
+.modal-close{
+    margin-top: -42px;
+    width: 8%;
+    float: right;
+    margin-right: -29px;
+    cursor: pointer;
 }

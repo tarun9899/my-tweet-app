@@ -1,23 +1,31 @@
 <div class="modal-header">
-    <h4 class="modal-title pull-left">Registration Form</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalHide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-    </button>
+    <span> <h4 class="modal-title pull-left">Registration Form</h4></span>
+    <span>
+        <img class="modal-close" src="./assets/img/x-button.png" alt="profile" (click)="modalHide()">
+    </span>
 </div>
 <div class="modal-body">
 
-    <div class="col-md-8 p-12">
+    <div class="col-md-12 p-12">
         <label for="userName" class="form-label">First Name:</label>
-        <input class="form-control" name="username" type="text" id="userName">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+            <input class="form-control form-control-sm p-12" name="username" type="text" placeholder="firstname"id="userName">
+        </div>
     </div>
-    <div class="col-md-8 p-12">
+    <div class="col-md-12 p-12">
         <label for="lastName" class="form-label">Last Name:</label>
-        <input class="form-control" name="lastname" type="text" id="lastName">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+            <input class="form-control form-control-sm p-12" name="lastname" type="text" placeholder="lastname" id="lastName">
+        </div>
     </div>
-    <div class="col-md-8 p-12">
+    <div class="col-md-12 p-12">
         <label for="age" class="form-label">Age:</label>
-        <select class="form-select">
-            <option>Select Age Group</option>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-angle-double-right"></i></span>
+        <select class="form-select p-12">
+            <option selected>Select Age Group</option>
             <option>1-10</option>
             <option>10-20</option>
             <option>20-30</option>
@@ -25,18 +33,25 @@
             <option>40-50</option>
             <option>More...</option>
         </select>
+        </div>
     </div>
     <!-- <div class="col-md-8 p-12">
         <input type="text" id="dateOfBirth" placeholder="Datepicker" name="dateOfBirth" bsDatepicker [bsConfig]="bsDatePickerConfig">
     </div> -->
 
-    <div class="col-md-8 p-12">
+    <div class="col-md-12 p-12">
         <label for="pssword" class="form-label">Password:</label>
-        <input class="form-control" name="password" type="text" id="pssword">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+            <input class="form-control form-control-sm p-12" placeholder="password" name="password" type="text" id="pssword">
+        </div>
     </div>
-    <div class="col-md-8 p-12">
+    <div class="col-md-12 p-12">
         <label for="conpssword" class="form-label">Confirm password:</label>
-        <input class="form-control" name="conpasword" type="password" id="conpssword">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input class="form-control form-control-sm p-12" placeholder="confirm password" name="conpasword" type="password" id="conpssword">
+        </div>
     </div>
 </div>
 

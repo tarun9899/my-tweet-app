@@ -30,6 +30,12 @@ textarea:focus{
 .wd-15{
     width: 15%;
 }
+.wd-20{
+    width: 20%;
+}
+.wd-25{
+    width: 25%;
+}
 .p-20{
     padding:20px;
 }
@@ -94,8 +100,47 @@ a{
 }
 
 .pic-hov:hover{
-    border-radius: 14px;
+    border-radius: 27px;
     background-color: lightskyblue;
     padding: 3px;
 }
 
+.tweet-btn{
+    font-weight: 900;
+    border-radius: 18px;
+    width: 20%;
+    height: 40px;
+}
+
+.m-lft{
+    margin-left: 25px;
+}
+
+.mr-bt{
+    margin-bottom: 20px;
+}
+
+.mr-tp-12{
+    margin-top: 12px;
+}
+
+.width-8{
+    width: 8%;
+}
+
+.sign-ot{
+    color: red;
+    cursor: pointer;
+}
+
+.float-right{
+    float: right;
+}
+
+.mrg-rt{
+    margin-right: 5px;
+}
+
+.wd-10{
+    width: 10%;
+}

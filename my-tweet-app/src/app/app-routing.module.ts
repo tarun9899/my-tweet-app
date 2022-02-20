@@ -5,10 +5,8 @@ import { TweetLoginComponent } from './tweet-login/tweet-login.component';
 import { TweetRegistrationComponent } from './tweet-registration/tweet-registration.component';
 
 const routes: Routes = [
-  {
-    path:'',component:TweetLoginComponent},
     {
-    path:'login',component:TweetHomeComponent
+    path:'login/:name',component:TweetHomeComponent
   },{
     path:'registration',component:TweetRegistrationComponent
   },
