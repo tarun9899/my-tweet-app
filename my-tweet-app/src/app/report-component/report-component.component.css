@@ -1,0 +1,68 @@
+
+.bg-col{
+    background-color:#ffffff;
+  }
+  
+  .m-rig-lef{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  
+  .profile-NM{
+    height: 130px;
+    margin-top: 60px;
+    border: 1px solid lightgrey;
+    padding:27px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    border-radius: 12px;
+  }
+  
+  .img-wd{
+    width: 4%;
+  }
+  .mr-rt{
+    margin-right: 5px;
+  }
+  
+  .wd-4{
+    width: 4%;
+  }
+  
+  .mr-r-20{
+  margin-right: 18%;
+  }
+  
+  .profile-NM:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .mr-l-r{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .mar-top{
+    margin-top: 20px;
+  }
+
+  .mar-top-12{
+      margin-top: 12px;
+  }
+
+  .button-css{
+    border-radius: 25Px;
+    font-weight: 900;
+}
+
+.fl-r{
+   float: right;
+}
+
+
+.m-r-12{
+    margin-right: 12px;
+}
+
+.m-l-30{
+margin-left: 30%;
+}

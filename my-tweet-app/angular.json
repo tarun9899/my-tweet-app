@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": "1ac5231d-014b-4035-a25a-d5715391e2d2"
   },
@@ -30,9 +30,11 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
-              "src/styles.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -99,7 +101,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

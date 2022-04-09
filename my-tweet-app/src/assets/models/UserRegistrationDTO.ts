@@ -5,5 +5,5 @@ export interface UserRegistrationDTO{
    age:number,
    dateOfBirth:Date,
    password:string,
-   confrimPassword:string
+   confirmPassword:string
 }

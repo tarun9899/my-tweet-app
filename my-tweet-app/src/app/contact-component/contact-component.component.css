@@ -1,0 +1,62 @@
+
+.bg-col{
+    background-color:#ffffff;
+  }
+  
+  .m-rig-lef{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  
+  .profile-NM{
+    height: 350px;
+    margin-top: 60px;
+    border: 1px solid lightgrey;
+    padding:27px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    border-radius: 12px;
+  }
+  
+  .img-wd{
+    width: 4%;
+  }
+  .mr-rt{
+    margin-right: 5px;
+  }
+  
+  .wd-4{
+    width: 50%;
+    margin-left: 70px;
+    margin-top: 70px;
+    margin-bottom: 40px;
+  }
+  
+  .mr-lf-43{
+    margin-left:43px
+  }
+  
+  .mr-lf-62{
+    margin-left: 62px;
+  }
+
+  .mr-lf-87{
+    margin-left:87px
+  }
+
+  .profile-NM:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .mr-l-r{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .m-lf-rt{
+    margin-left: 21px;
+    margin-right: 88px;
+  }
+
+  .mar-top{
+    margin-top: 20px;
+  }

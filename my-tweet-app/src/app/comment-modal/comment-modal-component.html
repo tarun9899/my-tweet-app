@@ -1,0 +1,27 @@
+<div class="modal-body">
+    <span>
+        <img class="modal-close" src="./assets/img/x-button.png" alt="profile" (click)="modalHide()">
+    </span>
+    <div class="row box-shad" *ngFor="let obj of tweetlist" style="border: 1px solid lightgrey;
+    border-radius: 23px;">
+        <div class=" p-20">
+            <img class="wd-5 mrg-rt" src="./assets/img/users.png" alt="name">
+            <span style ="margin-left: 4px;">{{username | titlecase}}</span>
+                <img class="wd-5" src="./assets/img/bluetick.png" alt="name">
+          </div>
+        <div class="p-20">
+       <p style="
+       overflow: hidden;
+       white-space: nowrap;
+       text-overflow: ellipsis;"> {{obj.tweets}} </p></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <textarea style="margin-top: 12px;border-radius: 22px; border: 1px solid lightgrey;" class="input-field box-shad" type="text" name="tweet" placeholder="Tweet your reply" [(ngModel)]="replyTweetValue"></textarea>
+        </div>
+    </div>
+    <span>
+        <button  style="margin-top: 6%;
+        float: right;" type="button" class="button-css btn btn-success" (click)="replyTweet()">Reply</button>
+</span>
+</div>

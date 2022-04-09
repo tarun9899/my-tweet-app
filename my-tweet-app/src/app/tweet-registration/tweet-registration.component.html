@@ -1,61 +1,103 @@
-<div class="modal-header">
+<div class="modal-header ">
     <span> <h4 class="modal-title pull-left">Registration Form</h4></span>
     <span>
         <img class="modal-close" src="./assets/img/x-button.png" alt="profile" (click)="modalHide()">
     </span>
 </div>
 <div class="modal-body">
-
-    <div class="col-md-12 p-12">
-        <label for="userName" class="form-label">First Name:</label>
+    <div class="alert" *ngIf="displayErrorMessage" [ngClass]="{
+        'alert-danger':messages.messageCode == '400',
+        'red-border':messages.messageCode == '400'
+        }" role="alert">
+            <button type="button" class="btn-close close float-right" aria-label="Close" (click)="alertClose()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+            <span *ngIf="messages.messageCode == '400'"><i
+                    class="mar-rig-6 fas fa-exclamation-triangle"></i>{{messages.message}}</span>
+        </div>
+    <div *ngIf="RegistrationFormFlag" class = "alert alert-danger" style="border:1px solid red">
+        <span><i class="mar-rig-6 fas fa-exclamation-triangle"></i></span>
+          Fill All (*) Mandatory Fields
+          <button type="button" class="btn-close" style="float: right;" aria-label="Close" (click)="alertClose()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+  <form  *ngIf="formData" [formGroup]="formData">
+    <div class="col-md-8 p-12">
+        <label for="userName" class="form-label">User Name<span style="color: red;">*</span>:</label>
         <div class="input-group">
-            <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
-            <input class="form-control form-control-sm p-12" name="username" type="text" placeholder="firstname"id="userName">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input [ngClass]="{'border':formData.get('username')?.touched && formData.get('username')?.invalid}" class="form-control form-control-sm p-12" formControlName="username" name="username" type="text" placeholder="username"id="userName">
+        </div>
+        <div *ngIf="formData.get('username')?.touched && formData.get('username')?.invalid" class="alert alert-danger">Please Enter UserName
         </div>
     </div>
-    <div class="col-md-12 p-12">
-        <label for="lastName" class="form-label">Last Name:</label>
+    <div class="col-md-8 p-12">
+        <label for="firstName" class="form-label">First Name<span style="color: red;">*</span>:</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
-            <input class="form-control form-control-sm p-12" name="lastname" type="text" placeholder="lastname" id="lastName">
+            <input [ngClass]="{'border':formData.get('firstname')?.touched && formData.get('firstname')?.invalid}" class="form-control form-control-sm p-12" formControlName="firstname" name="username" type="text" placeholder="firstname"id="userName">
+        </div>
+        <div *ngIf="formData.get('firstname')?.touched && formData.get('firstname')?.invalid" class="alert alert-danger">Please Enter FirstName
         </div>
     </div>
-    <div class="col-md-12 p-12">
-        <label for="age" class="form-label">Age:</label>
+    <div class="col-md-8 p-12">
+        <label for="lastName" class="form-label">Last Name<span style="color: red;">*</span>:</label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+            <input [ngClass]="{'border':formData.get('lastname')?.touched && formData.get('lastname')?.invalid}" class="form-control form-control-sm p-12" formControlName="lastname" name="lastname" type="text" placeholder="lastname" id="lastName">
+        </div>
+        <div *ngIf="formData.get('lastname')?.touched && formData.get('lastname')?.invalid" class="alert alert-danger">Please Enter LastName
+        </div>
+    </div>
+    <div class="col-md-8 p-12">
+        <label for="age" class="form-label">Age<span style="color: red;">*</span>:</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-angle-double-right"></i></span>
-        <select class="form-select p-12">
-            <option selected>Select Age Group</option>
-            <option>1-10</option>
-            <option>10-20</option>
-            <option>20-30</option>
-            <option>30-40</option>
-            <option>40-50</option>
-            <option>More...</option>
-        </select>
+            <input [ngClass]="{'border':formData.get('age')?.touched && formData.get('age')?.invalid}" class="form-control form-control-sm p-12" formControlName="age" name="age" type="text" placeholder="age" id="age">
+        </div>
+      <div *ngIf="formData.get('age')?.touched && formData.get('age')?.invalid" class="alert alert-danger">Please Enter Age
         </div>
     </div>
-    <!-- <div class="col-md-8 p-12">
-        <input type="text" id="dateOfBirth" placeholder="Datepicker" name="dateOfBirth" bsDatepicker [bsConfig]="bsDatePickerConfig">
-    </div> -->
+    <div class="col-md-8 p-12">
+        <!-- <input type="text" id="dateOfBirth" placeholder="Datepicker" name="dateOfBirth" bsDatepicker [bsConfig]="bsDatePickerConfig"> -->
+        <label for="age" class="form-label">Date OF Birth<span style="color: red;">*</span>:</label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <input [ngClass]="{'border':formData.get('date')?.touched && formData.get('date')?.invalid}" type="text"
+            formControlName="date"
+                   placeholder="Datepicker"
+                   class="form-control"
+                   [bsConfig]="bsDatePickerConfig"
+                   bsDatepicker>
+          </div>
+          <div *ngIf="formData.get('date')?.touched && formData.get('date')?.invalid" class="alert alert-danger">Please Enter Date
+        </div>
+    </div>
 
-    <div class="col-md-12 p-12">
-        <label for="pssword" class="form-label">Password:</label>
+    <div class="col-md-8 p-12">
+        <label for="pssword" class="form-label">Password<span style="color: red;">*</span>:</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-key"></i></span>
-            <input class="form-control form-control-sm p-12" placeholder="password" name="password" type="text" id="pssword">
+            <input [ngClass]="{'border':formData.get('password')?.touched && formData.get('password')?.invalid}" class="form-control form-control-sm p-12" formControlName="password" placeholder="password" name="password" type="password" id="pssword">
+        </div>
+        <div *ngIf="formData.get('password')?.touched && formData.get('password')?.invalid" class="alert alert-danger">Please Enter Password
         </div>
     </div>
-    <div class="col-md-12 p-12">
-        <label for="conpssword" class="form-label">Confirm password:</label>
+    <div class="col-md-8 p-12">
+        <label for="conpssword" class="form-label">Confirm password<span style="color: red;">*</span>:</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
-            <input class="form-control form-control-sm p-12" placeholder="confirm password" name="conpasword" type="password" id="conpssword">
+            <input [ngClass]="{'border':formData.get('lastname')?.touched && formData.get('lastname')?.invalid}" class="form-control form-control-sm p-12" formControlName="confirmpassword" placeholder="confirm password" name="conpasword" type="password" id="conpssword">
+        </div>
+        <div *ngIf="formData.get('confirmpassword')?.touched && formData.get('confirmpassword')?.invalid" class="alert alert-danger">Please Enter Confirm Password
         </div>
     </div>
+</form>
 </div>
 
+
 <div class="modal-footer">
-    <button type="button" class="button-css btn btn-success" (click)="modalHide()">Submit</button>
-    <button type="button" class="button-css btn btn-danger" (click)="modalHide()">Reset</button>
+    <button type="submit" class="button-css btn btn-primary" (click)="register(formData)">Register</button>
+    <button type="button" class="button-css btn btn-danger" (click)="resetModal()">Reset</button>
 </div>

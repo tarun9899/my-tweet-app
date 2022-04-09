@@ -1,0 +1,50 @@
+<div class="container mar-top">
+    <span><img class="img-wd mr-rt" src="./assets/img/profile.png" alt="profile">Profile</span>
+    <span>
+          <input class="form-control search-box" type="search" name="search" [(ngModel)]="searchedValue" 
+           (typeaheadOnSelect)="onSearch(searchedValue)" [typeahead]="namesList" placeholder="search" 
+           (blur)="onSearch(searchedValue)">
+   </span>
+    <hr>
+    <div class="col-md-12">
+       <div class="row profile-NM bg-col">
+          <div class="col-md-12">
+             <span><img class="img-wd mr-rt" src="./assets/img/users.png" alt="profile">{{ lastname | uppercase}} {{firstname | uppercase}}</span>
+          </div>
+       </div>
+ 
+       <div class="row profile-NM bg-col">
+          <div class="col-md-12">
+             <div class="row mar-top-12">
+                <div class="col-md-4">
+                   <span>UserId</span>
+                   <span class="m-rig-lef">:</span>
+                   <span>{{username}}</span>
+                </div>
+                <div class="col-md-4">
+                   <span>FirstName</span>
+                   <span class="m-rig-lef">:</span>
+                   <span>{{firstname}}</span>
+                </div>
+                <div class="col-md-4">
+                   <span>LastName</span>
+                   <span class="m-rig-lef">:</span>
+                   <span>{{lastname}}</span>
+                </div>
+             </div>
+             <div class="row mar-top-12">
+                <div class="col-md-4">
+                   <span>Age</span>
+                   <span class="m-rig-lef">:</span>
+                   <span>{{age}}</span>
+                </div>
+                <div class="col-md-4">
+                   <span>Date of Birth</span>
+                   <span class="m-rig-lef">:</span>
+                   <span>{{dateOfBirth}}</span>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

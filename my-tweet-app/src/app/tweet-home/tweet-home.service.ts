@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map } from 'rxjs';
+import { catchError, map, Subject } from 'rxjs';
 import { TweetDTO } from 'src/assets/models/tweetDTO';
 
 @Injectable({
@@ -8,8 +8,14 @@ import { TweetDTO } from 'src/assets/models/tweetDTO';
 })
 export class TweetHomeService {
 
-  constructor(private httpService: HttpClient) { }
-
+  public onClose = new Subject<boolean>();
+  onClose$ = this.onClose.asObservable();
+  constructor(private httpService: HttpClient) { 
+   
+  }
+  setClosePop(value:boolean){
+    this.onClose.next(value);
+  }
   /*@method:postTweetService,
   @request:TweetDTO,
   @description:it is used for posting tweet.
@@ -39,13 +45,11 @@ export class TweetHomeService {
     );
   }
 
-
-  /*@method: deleteTweetService
- @request:tweetid,username,
- @description:it is used for delete tweet.
- */
-  public deleteTweetService(username: string, tweetIdvalue: any) {
-    return this.httpService.delete(`http://localhost:8081/api/v1.0/tweets/${username}/delete/${tweetIdvalue}`).pipe(map((data: any) => {
+   /*@method:postTweetService,
+  @description:it is used for get all tweet.
+  */
+  public getAllTweetServiceByUsername(username:any) {
+    return this.httpService.get(`http://localhost:9092/api/v1.0/tweets/${username}`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -54,4 +58,81 @@ export class TweetHomeService {
       })
     );
   }
+
+
+  /*@method: deleteTweetService
+ @request:tweetid,username,
+ @description:it is used for delete tweet.
+ */
+  public deleteTweetService(username: string, tweetIdvalue: any) {
+    return this.httpService.delete(`http://localhost:9092/api/v1.0/tweets/${username}/delete/${tweetIdvalue}`).pipe(
+      catchError((error: any) => {
+        console.log('Error Message', error)
+        return error.error;
+      })
+    );
+  }
+
+
+   /*@method:postTweetService,
+  @request:TweetDTO,
+  @description:it is used for like tweet.
+  */
+  public likeTweetService(username: string, tweetIdvalue: any,tweetReq:any) {
+    return this.httpService.put(`http://localhost:9092/api/v1.0/tweets/${username}/like/${tweetIdvalue}`,tweetReq).pipe(map((data: any) => {
+      return data;
+    }),
+      catchError((error: any) => {
+        console.log('Error Message', error)
+        return error.error;
+      })
+    );
+  }
+
+    /*@method:postTweetService,
+  @request:TweetDTO,
+  @description:it is used for reply tweet.
+  */
+  public commentTweetService(username: string, tweetIdvalue: any,tweetReq:any) {
+    return this.httpService.post(`http://localhost:9092/api/v1.0/tweets/${username}/reply/${tweetIdvalue}`,tweetReq).pipe(map((data: any) => {
+      return data;
+    }),
+      catchError((error: any) => {
+        console.log('Error Message', error)
+        return error.error;
+      })
+    );
+  }
+
+
+  /*@method:postTweetService,
+  @description:it is used for get all likes.
+  */
+  public getAllTweetLikeService() {
+    return this.httpService.get(`http://localhost:9092/api/v1.0/tweets/alllikes`).pipe(map((data: any) => {
+      return data;
+    }),
+      catchError((error: any) => {
+        console.log('Error Message', error)
+        return error.error;
+      })
+    );
+  }
+
+   /*@method:postTweetService,
+  @description:it is used for get all comments.
+  */
+  public getAllTweetCommentsService() {
+    return this.httpService.get(`http://localhost:9092/api/v1.0/tweets/allcomments`).pipe(map((data: any) => {
+      return data;
+    }),
+      catchError((error: any) => {
+        console.log('Error Message', error)
+        return error.error;
+      })
+    );
+  }
+
 }
+
+

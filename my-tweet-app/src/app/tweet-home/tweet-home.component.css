@@ -64,8 +64,9 @@ textarea:focus{
 
 .hov:hover{
     border-radius: 20px;
-    padding:8px;
-    background-color:#efefef;
+    padding: 12px;
+    background-color: #efefef;
+    width: 55%;
 }
 
 a{
@@ -143,4 +144,77 @@ a{
 
 .wd-10{
     width: 10%;
+}
+
+.mar-tp{
+    margin-top: -35px;
+}
+::ng-deep .my-modal .modal-content {
+    border-radius: 22px;
+    border: 1px solid lightgray;
+    width: 68%;
+    margin-left: 19%;
+    height: 380px;
+}
+
+.retweetHig:hover{
+    border-radius: 22px;
+    padding: 8px;
+    background-color: rgb(202, 228, 177);
+    border: 1px solid green;
+}
+.commentHig:hover{
+    border-radius: 22px;
+    padding: 8px;
+    background-color: rgb(162 188 247);
+    border: 1px solid #1f13cb;
+}
+.likeHig:hover{
+    border-radius: 22px;
+    padding: 8px;
+    background-color: rgb(243, 156, 221);
+    border: 1px solid #dd00d6;
+}
+
+
+::ng-deep .toast-class{
+    width: 350px;
+    max-width: 100%;
+    font-size: .875rem;
+    pointer-events: auto;
+    background-color: rgba(255,255,255,.85);
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    border-radius: .25rem;
+}
+
+::ng-deep .toast-class .toast-close-button{
+    width: 16%;
+    margin-top: 7px;
+    color: #000000;
+}
+
+::ng-deep .title-class{
+    display: flex;
+    align-items: center;
+    padding: .5rem .75rem;
+    color: #0d0e0e;
+    background-color: rgba(255,255,255,.85);
+    background-clip: padding-box;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+::ng-deep .message-class{
+    padding: .75rem;
+    word-wrap: break-word;
+    border-top: 1px solid #e1e8ef;
+}
+
+::ng-deep .dropdown-menu{
+    width: 100%;
+}
+
+.a-link:hover{
+    color: blue;
 }

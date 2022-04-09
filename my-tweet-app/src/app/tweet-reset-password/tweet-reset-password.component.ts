@@ -15,15 +15,33 @@ export class TweetResetPasswordComponent implements OnInit {
   passwordValue:string | undefined;
  confirmPasswordValue:string | undefined;
  public messages!: MessageDTO;
+ public displayErrorMessage: boolean =false;
 constructor(private loginService: TweetLoginService,public modalRef: BsModalRef) { }
   ngOnInit(): void {
-    
+    this.messages = {
+      message: '',
+      messageCode: ''
+    };
   }
   modalHide(){
     this.modalRef.hide();
   }
 
-  submitModal(){
+  submitModal(){ 
+    if(this.passwordValue !== this.confirmPasswordValue){
+      this.displayErrorMessage = true;
+    this.messages = {
+      message: 'password and confirm password should be same.',
+      messageCode: '400'
+    };
+  
+  }
+  else{ 
+    this.displayErrorMessage = false;
+    this.messages = {
+      message: '',
+      messageCode: ''
+    };
     let resetPasswordReq = {} as ResetPasswordDTO;
     resetPasswordReq.password = (this.passwordValue != null)?this.passwordValue : '';
     let username =(this.usernameValue!= null) ?this.usernameValue:'';
@@ -32,13 +50,23 @@ constructor(private loginService: TweetLoginService,public modalRef: BsModalRef)
       this.messages =
       {
         messageCode: data.messageCode,
-        message: data.message
+        message: 'password resetted successfully.'
       }
       this.loginService.setMessageObject(this.messages);
     })
     this.modalRef.hide();
   }
+} 
   }
+
+  alertClose(){
+    this.displayErrorMessage = false;
+    this.messages = {
+     message: '',
+     messageCode: ''
+   };
+   
+ }
 
   resetModal(){
   this.usernameValue ='';

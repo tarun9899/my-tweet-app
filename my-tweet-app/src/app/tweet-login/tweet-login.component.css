@@ -22,9 +22,7 @@
 }
 
 .font-sz{
-    font-weight: 600;
     color: black;
-    font-family: inherit;
 }
 
 ::ng-deep .my-modal .modal-content {
@@ -71,4 +69,8 @@
 a{
     color: #0d6efd !important ;
     text-decoration: underline !important;
+}
+
+.border-text{
+    border:1px solid red
 }

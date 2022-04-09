@@ -42,7 +42,7 @@ export class TweetLoginService {
   @description:it is used for new  user registration services.
   */
   public userRegistrationService(userRegRequest: UserRegistrationDTO) {
-    return this.httpService.post(`http://localhost:8081/api/v1.0/tweets/register`, userRegRequest).pipe(map((data: any) => {
+    return this.httpService.post(`http://localhost:9092/api/v1.0/tweets/register`, userRegRequest).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {

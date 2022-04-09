@@ -1,0 +1,30 @@
+
+.logout-screen{
+    border: 1px solid lightgrey;
+    margin-top: 125px;
+    padding: 100px;
+    border-radius: 22px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logout-link{
+    color: blue;
+    cursor: pointer;
+}
+
+.img-wd{
+    width: 4%;
+  }
+  .mr-rt{
+    margin-right: 5px;
+  }
+
+  .mar-top{
+    margin-top: 20px;
+  }
+
+  .img-css{
+    width: 45%;
+    margin-top: -18px;
+    margin-left: 30px;
+  }

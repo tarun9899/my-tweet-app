@@ -1,18 +1,17 @@
 <div class="container">
     <div class="row">
+        
         <div class="col-md-3">
             <nav class="nav flex-column" style="position: fixed;width: 20%;">
-                    <a routerLink="" class="nav-link mr-l f-sz"> <img class="wd-25 m-lft m-r-10 mr-bt"
-                            src="./assets/img/twitter.png" alt="tweet"></a>
-                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                    <a class="nav-link mr-l f-sz" style="margin-bottom: 12px; cursor: pointer;"> <img class=" m-r-10" style="width:20%"
+                            src="./assets/img/twitter.png" alt="tweet" (click) = "refreshScreen()"></a>
+                    <a (click) = "refreshScreen()" class="hov nav-link mr-l f-sz" style="margin-bottom: 12px;cursor: pointer;"> <img class="wd-15 m-r-10" 
                             src="./assets/img/home.png" alt="home">Home</a>
-                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
-                            src="./assets/img/users.png" alt="profile"> Profile</a>
-                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
-                            src="./assets/img/trend.png" alt="statistics"> Statistics</a>
-                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                    <a routerLink="/profile/{{username}}" class="hov nav-link mr-l f-sz" style="margin-bottom: 12px;"> <img class="wd-15 m-r-10" 
+                            src="./assets/img/profile.png" alt="profile"> Profile</a>
+                    <a routerLink="/report" class="hov nav-link mr-l f-sz" style="margin-bottom: 12px;"> <img class="wd-15 m-r-10"
                             src="./assets/img/mail.png" alt="report">Report</a>
-                    <a routerLink="" class="hov nav-link mr-l f-sz"> <img class="wd-15 m-r-10"
+                    <a routerLink="/contact" class="hov nav-link mr-l f-sz" style="margin-bottom: 12px;"> <img class="wd-15 m-r-10"
                             src="./assets/img/phone.png" alt="more">Contact</a>
             </nav>
         </div>
@@ -29,7 +28,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 p-10">
-                    <button class="btn btn-primary f-r  tweet-btn" (click)="postTweet()">tweet</button>
+                    <button class="btn btn-primary f-r  tweet-btn" (click)="postTweet()" [disabled]="postTweetValue == undefined || postTweetValue == ''">tweet</button>
                 </div>
             </div>
             <div class="row border" *ngFor="let obj of tweetList">
@@ -37,37 +36,58 @@
                     <div class=" p-20">
                         <img class="wd-5 mrg-rt" src="./assets/img/users.png" alt="name">{{obj.name | titlecase}}
                             <img class="wd-5" src="./assets/img/bluetick.png" alt="name">
-                            <img class="wd-5 sign-ot float-right"  src="./assets/img/dots.png" alt="name">
-                            <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()">
-                                <a href id="basic-link" dropdownToggle (click)="false"
-                                   aria-controls="basic-link-dropdown">Click me for a dropdown, yo!</a>
-                                <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu"
-                                    role="menu" aria-labelledby="basic-link">
-                                  <li *ngFor="let choice of items">
-                                    <a class="dropdown-item" href="#">{{choice}}</a>
-                                  </li>
-                                </ul>
-                              </span>
-                    </div>
+                           
+                            <div class="dropdown">
+                                <span dropdown id="basic-link" dropdownToggle (click)="true"
+                                aria-controls="basic-link-dropdown"> <img class="wd-5 sign-ot float-right mar-tp" src="./assets/img/dots.png" alt="name">
+                                    <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu" 
+                                    style="margin-left: 85%;
+                                    margin-top: -15px;
+                                    width: 25%;border-radius: 12px;    height: 103px; border:1px solid #adb5bd"
+                                        role="menu" aria-labelledby="basic-link">
+                                      <li *ngFor="let choice of items">
+                                        <span class="dropdown-item" style = "font-weight: 600;">{{choice.key}}</span>
+                                        <img style ="
+                                        cursor: pointer;
+                                        width: 11%;
+                                        margin-left: 110px;margin-top:-55px;" src={{choice.value}} alt="name" (click)="action(choice.key,obj.tweetId)">
+                                      </li>
+                                    </ul>
+                                  </span>
+                            </div>                           
+                      </div>
                     <div class="p-20">{{obj.tweet}}</div>
                 </div>
                 <div class="row p-20">
                     <div class="col-md-3">
-                        <a routerLink="">
-                            <img class="wd-15" src="./assets/img/comment.png" alt="comment">
-                        </a>
+                        <span class="commentHig">
+                            <img class="wd-15" src="./assets/img/comment.png" alt="comment" style ="cursor: pointer;" (click)="commentTweet(obj.tweetId)">
+                        </span>
                         <span class="p-7">{{obj.comment}}</span>
                     </div>
                     <div class="col-md-3">
-                        <a routerLink="">
-                            <img class="wd-15" src="./assets/img/retweet.png" alt="retweet"></a>
-                        <span class="p-7">
-                            24
-                        </span>
+
+                        <div class="dropdown">
+                            <span class="retweetHig" dropdown id="basic-link" dropdownToggle (click)="true"
+                            aria-controls="basic-link-dropdown"> <img class="wd-15" style ="cursor: pointer;" src="./assets/img/retweet.png" alt="retweet">
+                                <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu" 
+                                style="margin-left: -45%;
+                                width: 25%;border-radius: 12px;height: 65px; border:1px solid #adb5bd"
+                                    role="menu" aria-labelledby="basic-link">
+                                  <li style = "margin-top: 11px">
+                                    <span class="p-7" style ="cursor: pointer;font-weight: 600;margin-left: 10px;">
+                                        Re-Tweet<img class="wd-15" style ="cursor: pointer; margin-left: 28px;" src="./assets/img/retweet.png" alt="retweet" 
+                                        (click)="postReTweet(obj.tweet)">
+                                    </span>
+                                  </li>
+                                </ul>
+                              </span>
+                        </div> 
                     </div>
                     <div class="col-md-3">
-                        <a routerLink="">
-                            <img class="wd-15" src="./assets/img/like.png" alt="like"></a>
+                        <span class="likeHig"><img *ngIf = "obj.like >= 1" style ="cursor: pointer;" class="wd-15" src="./assets/img/like.png" alt="like"
+                            (click)="likeTweet(obj.tweetId)"></span>
+                        <span class="likeHig"><img *ngIf = "obj.like == 0" class="wd-15" style ="cursor: pointer;" src="./assets/img/dislike.png" alt="like" (click)="likeTweet(obj.tweetId)"></span>
                         <span class="p-7">{{obj.like}}</span>
                     </div>
                 </div>
@@ -76,29 +96,26 @@
         <div class="col-md-3">
             <div class="row">
                 <div class="col-md-12 mr-tp-12">
+                    <a  routerLink="/profile/{{username}}">
                     <span><img class="m-r-10 width-8"
                         src="./assets/img/users.png" alt="profile"></span> 
-                    <span class="f-sz">{{userFullName | titlecase}}</span>
-                        <span><img class="m-r-10 wd-10 float-right"
-                        src="./assets/img/logout.png" alt="profile"></span>
+                    <span class="f-sz a-link">{{userFullName | titlecase}}</span></a>
+                    <span class="f-sz" style="margin-left: 62px;">Logout</span>
+                        <span>
+                           
+                            <img class="m-r-10  float-right" style="cursor: pointer;width: 19px;
+                            margin-top: 6px;"
+                        src="./assets/img/logout.png" alt="profile" (click)="logout()"></span>
                 </div>
                 <div class="col-md-12 p-12">
                     <div class="input-group">
-                        <input class="form-control border-rad" type="search" name="search" placeholder="search">
+                        <input class="form-control" type="search" name="search" [(ngModel)]="searchedValue" 
+                         (typeaheadOnSelect)="onSearch(searchedValue)" [typeahead]="namesList" placeholder="search" 
+                         (blur)="onSearch(searchedValue)"
+                         >
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-md-12 ">
-                    <div class="col-md-6 hov-1 p-12">
-                        <a class="f-sz" routerLink=""><img class="wd-15 m-r-10" src="./assets/img/address.png"
-                                alt="location">Location</a>
-                    </div>
-                    <div class="col-md-6 hov-1 p-12">
-                        <a class="f-sz" routerLink=""> <img class="wd-15 m-r-10" src="./assets/img/end-call.png"
-                                alt="contact">Contact US</a>
-                    </div>
-                </div>
-            </div> -->
         </div>
+       
     </div>

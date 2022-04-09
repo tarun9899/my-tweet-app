@@ -1,13 +1,22 @@
+.md-sz{
+    width: 150% !important;
+    border-radius: 22px !important;;
+    border: 1px solid red !important;;
+}
+
 .p-12{
     padding: 12px;
 }
 
-.form-label{
-    font-weight: 700;
+.mar-rig-6
+{
+    margin-right: 6px;
 }
-
+.float-right{
+    float:right
+}
 .button-css{
-    width: 48%;
+    width: 16%;
     border-radius: 25Px;
     font-weight: 900;
 }
@@ -22,4 +31,8 @@
     float: right;
     margin-right: -29px;
     cursor: pointer;
+}
+
+.border{
+    border: 1px solid red !important;
 }

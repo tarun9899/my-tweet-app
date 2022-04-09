@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/global-styles/global-variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import '~ngx-toastr/toastr.css';
+
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+body{
+    font-family:  "Arial",sans-serif;
+    font-size:20px;
+}
+p{
+    color: $myBlue;
+}
+
