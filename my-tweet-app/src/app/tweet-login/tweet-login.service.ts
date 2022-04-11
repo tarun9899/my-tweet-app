@@ -26,7 +26,7 @@ export class TweetLoginService {
   @description:it is used for logging user services.
   */
   public  userLoginService(userRequest: UserLoginDTO) {
-    return this.httpService.post(`http://localhost:9092/api/v1.0/tweets/login`, userRequest).pipe(map((data: any) => {
+    return this.httpService.post(`http://localhost:7001/api/v1.0/tweets/login`, userRequest).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -42,7 +42,7 @@ export class TweetLoginService {
   @description:it is used for new  user registration services.
   */
   public userRegistrationService(userRegRequest: UserRegistrationDTO) {
-    return this.httpService.post(`http://localhost:9092/api/v1.0/tweets/register`, userRegRequest).pipe(map((data: any) => {
+    return this.httpService.post(`http://localhost:7001/api/v1.0/tweets/register`, userRegRequest).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -58,7 +58,7 @@ export class TweetLoginService {
   @description:it is used for resetting password for user services.
   */
   public resetPasswordService(username:string,resetPsdRequest:ResetPasswordDTO){
-    return this.httpService.put(`http://localhost:9092/api/v1.0/tweets/${username}/forgot`, resetPsdRequest).pipe(map((data: any) => {
+    return this.httpService.put(`http://localhost:7001/api/v1.0/tweets/${username}/forgot`, resetPsdRequest).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -73,7 +73,7 @@ export class TweetLoginService {
   @description:it is used for get user by name services.
   */
   public searchByNameService(username:string | null){
-    return this.httpService.get(`http://localhost:9092/api/v1.0/tweets/users/search/${username}`).pipe(map((data: any) => {
+    return this.httpService.get(`http://localhost:7001/api/v1.0/tweets/users/search/${username}`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -88,7 +88,7 @@ export class TweetLoginService {
   @description:it is used for get all user services.
   */
   public getALLUserService(){
-    return this.httpService.get(`http://localhost:9092/api/v1.0/tweets/users/all`).pipe(map((data: any) => {
+    return this.httpService.get(`http://localhost:7001/api/v1.0/tweets/users/all`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
