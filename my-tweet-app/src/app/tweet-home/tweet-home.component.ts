@@ -116,9 +116,9 @@ export class TweetHomeComponent implements OnInit {
     })
   }
 
-  public action(actionType: any, tweetIdValue: any) {
+  public action(actionType: any, tweetIdValue: any,tweet:any) {
     if (actionType = 'Delete') {
-      this.tweetHomeService.deleteTweetService(this.username, tweetIdValue).subscribe(data => {
+      this.tweetHomeService.deleteTweetService(this.username, tweetIdValue,tweet).subscribe(data => {
         this.refreshScreen();
       });
     }
