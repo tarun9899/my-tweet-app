@@ -190,9 +190,9 @@ export class TweetHomeComponent implements OnInit {
 
 
   onSearch(searchValue: any) {
-    this.tweetList = [];
     console.log(searchValue);
     if (searchValue) {
+      this.tweetList = [];
       this.tweetHomeService.getAllTweetServiceByUsername(searchValue).subscribe(data => {
         for (let datavalue of data) {
           this.tweetObj = {
