@@ -25,7 +25,7 @@
     color: black;
 }
 
-::ng-deep .my-modal .modal-content {
+::ng-deep .my-modal-register .modal-content {
     border-radius: 22px;
     border: 1px solid black;
 }

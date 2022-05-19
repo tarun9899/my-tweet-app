@@ -26,10 +26,8 @@
 }
 
 .modal-close{
-    margin-top: -42px;
-    width: 8%;
+    width: 7%;
     float: right;
-    margin-right: -29px;
     cursor: pointer;
 }
 

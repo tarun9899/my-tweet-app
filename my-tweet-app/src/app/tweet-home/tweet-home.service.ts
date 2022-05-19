@@ -24,8 +24,7 @@ export class TweetHomeService {
  //http://localhost:8084/api/v1.0/tweets/${username}/add
  // https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/tweets/{username}/add
   public postTweetService(username: string, tweetReq: TweetDTO) {
-    return this.httpService.post(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}
-    /${username}${TweetsConstants.tweetUrls.addTweet}`, tweetReq).pipe(map((data: any) => {
+    return this.httpService.post(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}/${username}${TweetsConstants.tweetUrls.addTweet}`, tweetReq).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -57,8 +56,7 @@ export class TweetHomeService {
  //http://localhost:8084/api/v1.0/tweets/${username}
  //https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/tweets/{username}/all
   public getAllTweetServiceByUsername(username:any) {
-    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}
-    /${username}${TweetsConstants.tweetUrls.allTweetByName}`).pipe(map((data: any) => {
+    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}/${username}${TweetsConstants.tweetUrls.allTweetByName}`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -76,8 +74,7 @@ export class TweetHomeService {
 //http://localhost:8084/api/v1.0/tweets/${username}/delete/${tweetIdvalue}/${tweet}
 // https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/tweets/{username}/delete/{id}/{tweet}
   public deleteTweetService(username: string, tweetIdvalue: any,tweet:any) {
-    return this.httpService.delete(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}
-    /${username}${TweetsConstants.tweetUrls.deleteTweet}/${tweetIdvalue}/${tweet}`).pipe(
+    return this.httpService.delete(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}/${username}${TweetsConstants.tweetUrls.deleteTweet}/${tweetIdvalue}/${tweet}`).pipe(
       catchError((error: any) => {
         console.log('Error Message', error)
         return error.error;
@@ -93,8 +90,7 @@ export class TweetHomeService {
  //http://localhost:8084/api/v1.0/tweets/${username}/like/${tweetIdvalue}
  // https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/tweets/{username}/like/{id}
   public likeTweetService(username: string, tweetIdvalue: any,tweetReq:any) {
-    return this.httpService.put(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}
-    /${username}${TweetsConstants.tweetUrls.like}/${tweetIdvalue}`,tweetReq).pipe(map((data: any) => {
+    return this.httpService.put(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}/${username}${TweetsConstants.tweetUrls.like}/${tweetIdvalue}`,tweetReq).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -111,8 +107,7 @@ export class TweetHomeService {
  //http://localhost:8084/api/v1.0/tweets/${username}/reply/${tweetIdvalue}
  //https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/tweets/{username}/reply/{id}
   public commentTweetService(username: string, tweetIdvalue: any,tweetReq:any) {
-    return this.httpService.post(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}
-    /${username}${TweetsConstants.tweetUrls.reply}/${tweetIdvalue}`,tweetReq).pipe(map((data: any) => {
+    return this.httpService.post(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}/${username}${TweetsConstants.tweetUrls.reply}/${tweetIdvalue}`,tweetReq).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -129,8 +124,7 @@ export class TweetHomeService {
  //http://localhost:8084/api/v1.0/tweets/likes/all
  //https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/tweets/like/all
   public getAllTweetLikeService() {
-    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}
-    ${TweetsConstants.tweetUrls.likeALL}`).pipe(map((data: any) => {
+    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetUrls.tweets}${TweetsConstants.tweetUrls.likeALL}`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {

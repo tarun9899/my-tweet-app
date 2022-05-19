@@ -56,12 +56,12 @@ export class TweetHomeComponent implements OnInit {
         })
       }
     })
-    this.userLoginService.getALLUserService().subscribe(data => {
-      data.forEach((dataValue: any) => {
-        this.namesList.push(dataValue.userName);
-      });
-      console.log(this.namesList);
-    });
+    // this.userLoginService.getALLUserService().subscribe(data => {
+    //   data.forEach((dataValue: any) => {
+    //     this.namesList.push(dataValue.userName);
+    //   });
+    //   console.log(this.namesList);
+    // });
     this.getALLTweets();
   }
 
@@ -74,7 +74,10 @@ export class TweetHomeComponent implements OnInit {
       this.userLoginService.getALLUserService().subscribe(userInfo => {
         this.userInfoList = userInfo;
         this.tweetDataList.forEach((tweetValue: any) => {
+          this.namesList=[];
           this.userInfoList.forEach((userValue: any) => {
+            this.namesList.push(userValue.userName);
+            console.log(this.namesList)
             if (tweetValue.userId == userValue.userId) {
               this.tweetObj = {
                 tweetId: tweetValue.tweetId,
@@ -191,7 +194,7 @@ export class TweetHomeComponent implements OnInit {
 
   onSearch(searchValue: any) {
     console.log(searchValue);
-    if (searchValue) {
+    if (searchValue){
       this.tweetList = [];
       this.tweetHomeService.getAllTweetServiceByUsername(searchValue).subscribe(data => {
         for (let datavalue of data) {

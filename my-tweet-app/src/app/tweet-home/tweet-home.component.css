@@ -149,13 +149,6 @@ a{
 .mar-tp{
     margin-top: -35px;
 }
-::ng-deep .my-modal .modal-content {
-    border-radius: 22px;
-    border: 1px solid lightgray;
-    width: 68%;
-    margin-left: 19%;
-    height: 380px;
-}
 
 .retweetHig:hover{
     border-radius: 22px;

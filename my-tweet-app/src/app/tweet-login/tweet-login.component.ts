@@ -23,12 +23,12 @@ export class TweetLoginComponent implements OnInit,OnDestroy {
 
   public messages!: MessageDTO;
   public resetComponentConfig = {
-    class: 'my-modal modal-md',
+    class: 'my-modal-reset modal-lg',
     ignoreBackdropClick:true,
     keyboard:true
   }
   public registrationComponentConfig = {
-    class: 'my-modal modal-lg',
+    class: 'my-modal-register modal-lg',
     ignoreBackdropClick:true,
     keyboard:true
   }

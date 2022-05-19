@@ -110,7 +110,7 @@
                 <div class="col-md-12 p-12">
                     <div class="input-group">
                         <input class="form-control" type="search" name="search" [(ngModel)]="searchedValue" 
-                         (typeaheadOnSelect)="onSearch(searchedValue)" [typeahead]="namesList" placeholder="search" 
+                        (blur)="onSearch(searchedValue)" [typeahead]="namesList" placeholder="search" 
                          >
                     </div>
                 </div>

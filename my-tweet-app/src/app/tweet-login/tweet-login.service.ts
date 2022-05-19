@@ -82,8 +82,7 @@ export class TweetLoginService {
   public searchByNameService(username: string | null) {
     // https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/users/users/search/{username}
     // http://localhost:9095/api/v1.0/tweets/users/search/${username}
-    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetsusersUrls.users}
-    ${TweetsConstants.tweetsusersUrls.userSearch}/${username}`).pipe(map((data: any) => {
+    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetsusersUrls.users}${TweetsConstants.tweetsusersUrls.userSearch}/${username}`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
@@ -100,8 +99,7 @@ export class TweetLoginService {
   public getALLUserService() {
     //http://localhost:9095/api/v1.0/tweets/users/all
     // https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env/users/users/all
-    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetsusersUrls.users}
-    ${TweetsConstants.tweetsusersUrls.allUser}`).pipe(map((data: any) => {
+    return this.httpService.get(`${TweetsConstants.tweetsUrls.tweetsBaseUrl}${TweetsConstants.tweetsusersUrls.users}${TweetsConstants.tweetsusersUrls.allUser}`).pipe(map((data: any) => {
       return data;
     }),
       catchError((error: any) => {
