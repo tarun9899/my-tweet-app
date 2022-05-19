@@ -157,7 +157,7 @@ export class TweetHomeComponent implements OnInit {
 
 
   public refreshScreen() {
-    window.location.reload();
+    this.getALLTweets();
   }
 
 
@@ -184,7 +184,7 @@ export class TweetHomeComponent implements OnInit {
         username: this.username,
         tweetId: tweetId
       },
-      class: 'my-modal modal-lg',
+      class: 'my-modal-comment modal-lg',
       ignoreBackdropClick: true,
       keyboard: true
     }

@@ -54,3 +54,6 @@
     float: right;
     margin-top: 5px;
   }
+  ::ng-deep .dropdown-menu{
+    width: 22%;
+}

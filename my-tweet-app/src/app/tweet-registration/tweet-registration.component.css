@@ -23,6 +23,7 @@
 
 ::ng-deep modal-content{
     border-radius: 22px;
+    border: 1px solid black;
 }
 
 .modal-close{
