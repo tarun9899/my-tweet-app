@@ -2,7 +2,7 @@
 export class TweetsConstants{
 
     public static readonly tweetsUrls = Object.freeze({
-        tweetsBaseUrl : 'https://r0bv8uu3j6.execute-api.us-east-1.amazonaws.com/Prod-Env',
+        tweetsBaseUrl : 'https://sh41w1iz0l.execute-api.ap-south-1.amazonaws.com/Prod',
     })
 
 
@@ -22,7 +22,7 @@ export class TweetsConstants{
         addTweet:'/add',
         allTweetByName:'/all',
         deleteTweet:'/delete',
-        likeALL:'/like/all',
+        likeALL:'/likes/all',
         like:'/like',
         reply:'/reply',
         updateTweet:'/update'
